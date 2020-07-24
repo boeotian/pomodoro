@@ -18,16 +18,6 @@ module Pomodoro
 
     def start()
       delta = 0
-      # pd = @timers.every(@pomodoro_length * 60) {
-      #   delta += 1
-      #   if delta == 4 
-      #     timers.wait(@pomodoro_long * 60)
-      #     delta = 0
-      #   else
-      #     timers.wait(@pomodoro_short * 60)
-      #   end
-      # }
-      
       pd = @timers.every(@pomodoro_length * 60) {
         unless delta == 4 
           @timers.wait(@pomodoro_short * 60)
